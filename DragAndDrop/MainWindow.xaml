@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TreeView x:Name="XAML_TreeView" AllowDrop="True" FontSize="50">
-            <TreeViewItem Header="01번째 아이템">
+        <TreeView x:Name="XAML_TreeView" AllowDrop="True" FontSize="50" Drop="TreeViewItem_Drop" MouseLeftButtonUp="XAML_TreeView_MouseLeftButtonUp">
+            <TreeViewItem Header="01번째 아이템" IsExpanded="True">
                 <TreeViewItem Header="01-01번째 아이템"/>
                 <TreeViewItem Header="01-02번째 아이템"/>
                 <TreeViewItem Header="01-03번째 아이템"/>
@@ -17,16 +17,15 @@
             <TreeViewItem Header="03번째 아이템"/>
             <TreeViewItem Header="04번째 아이템"/>
             <TreeViewItem Header="05번째 아이템"/>
-
             <TreeView.ItemContainerStyle>
                 <Style TargetType="{x:Type TreeViewItem}">
                     <!--
-                    <EventSetter Event="DragLeave" Handler="TreeViewItem_DragLeave"/>
                     <EventSetter Event="PreviewMouseLeftButtonDown" Handler="XAML_TreeView_PreviewMouseLeftButtonDown"/>
-                    <EventSetter Event="PreviewDragOver" Handler="TreeViewItem_PreviewDragOver"/>
-                    <EventSetter Event="PreviewDrop" Handler="TreeViewItem_PreviewDrop"/>
-                    <EventSetter Event="PreviewMouseMove" Handler="TreeViewItem_PreviewMouseMove"/>
-                    -->
+                    <EventSetter Event="DragOver" Handler="TreeViewItem_DragOver"/>
+                    <EventSetter Event="Drop" Handler="TreeViewItem_Drop"/>
+                    <EventSetter Event="DragLeave" Handler="TreeViewItem_DragLeave"/>
+                    <EventSetter Event="MouseMove" Handler="TreeViewItem_MouseMove"/>
+-->
                 </Style>
             </TreeView.ItemContainerStyle>
         </TreeView>
